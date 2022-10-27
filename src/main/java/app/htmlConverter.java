@@ -1,7 +1,5 @@
 package app;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import entity.Bob;
 import entity.Kitob;
 import entity.Oyat;
@@ -95,7 +93,7 @@ public class htmlConverter {
                     }
                 }
 
-                Gson gson = new GsonBuilder().setPrettyPrinting().create();
+//                Gson gson = new GsonBuilder().setPrettyPrinting().create();
 //                Gson gson = new Gson();
 
 //                System.out.println(gson.toJson(kitob, Kitob.class));
@@ -106,8 +104,8 @@ public class htmlConverter {
 
                 kitob1 = kitob;
 
-                jsonWriter.write(gson.toJson(kitob, Kitob.class));
-                jsonWriter.flush();
+//                jsonWriter.write(gson.toJson(kitob, Kitob.class));
+//                jsonWriter.flush();
 
                 htmlWriter.write(kitob.toString());
                 htmlWriter.flush();
@@ -119,8 +117,8 @@ public class htmlConverter {
 
         System.out.println(kitob1.toString());
 
-        Gson gson = new Gson();
-        System.out.println(gson.toJson(kitob1, Kitob.class));
+//        Gson gson = new Gson();
+//        System.out.println(gson.toJson(kitob1, Kitob.class));
 
 
     }

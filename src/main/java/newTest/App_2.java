@@ -119,11 +119,11 @@ public class App_2 {
         System.out.println(kitobs.size());
 
         for (int i = 0; i < kitobs.size(); i++) {
-            String htmlOutPath = "output";
-            BufferedWriter htmlWriter = new BufferedWriter(new FileWriter(htmlOutPath + "/" + "uz" + (i + 1) + ".htm"));
+//            String htmlOutPath = "output";
+//            BufferedWriter htmlWriter = new BufferedWriter(new FileWriter(htmlOutPath + "/" + "uz" + (i + 1) + ".htm"));
 
-            htmlWriter.write(kitobs.get(i).toString());
-            htmlWriter.flush();
+//            htmlWriter.write(kitobs.get(i).toString());
+//            htmlWriter.flush();
 
         }
 
@@ -157,22 +157,27 @@ public class App_2 {
     }
 
     static String getTextContent(Node node) {
-        String s = node.getTextContent()/*.replace("—", "-")*/;
+        String s = node.getTextContent();
+        s = s.replace("—", "-");
 //        s = new String(s.getBytes(StandardCharsets.UTF_8), StandardCharsets.ISO_8859_1);
 
 //        return s;
 
         while (
 
-                false &&
-                        (
-                                s.contains("  ")
-                                        || s.contains(" .")
-                                        || s.contains("ʻ")
-                                        || s.contains("—")
-                                        || s.contains("–")
-                                        || s.contains("“")
-                        )
+//                false &&
+                (
+                        s.contains("  ")
+                                || s.contains(" .")
+                                || s.contains("ʻ")
+                                || s.contains("ʼ")
+                                || s.contains("—")
+                                || s.contains("–")
+                                || s.contains("“")
+                                || s.contains("”")
+                                || s.contains("»")
+                                || s.contains("«")
+                )
         ) {
 
             s = s.replace("  ", " ");
@@ -180,7 +185,9 @@ public class App_2 {
             s = s.replace("—", "-");
             s = s.replace("–", "-");
             s = s.replace("ʻ", "'");
+            s = s.replace("ʼ", "'");
             s = s.replace("“", "\"");
+            s = s.replace("”", "\"");
         }
 
 
